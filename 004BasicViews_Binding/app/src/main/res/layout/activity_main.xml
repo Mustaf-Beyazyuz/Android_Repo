@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Name EditText -->
+
+
+
+    <EditText
+        android:id="@+id/mainActivityEditTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/edittext_name_hint_text" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/mainActivityEditTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/edittext_email_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/edittext_username_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="@string/edittext_password_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="@string/edittext_confirm_password_hint_text"
+        />
+
+    <!-- Horizontal Layout for Date Inputs -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Day EditText -->
+        <EditText
+            android:id="@+id/mainActivityEditTextDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edittext_day_hint_text"
+            android:inputType="number" />
+
+        <!-- Month EditText -->
+        <EditText
+            android:id="@+id/mainActivityEditTextMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edittext_month_hint_text"
+            android:inputType="number" />
+
+        <!-- Year EditText -->
+        <EditText
+            android:id="@+id/mainActivityEditTextYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/edittext_year_hint_text"
+            android:inputType="number" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/mainActivityCheckBoxAcceptConditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/checkbox_accept_text" />
+
+        <Button
+            android:id="@+id/mainActivityButtonRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/button_register_text" />
+
+        <Button
+            android:id="@+id/mainActivityCloseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_close_text" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
