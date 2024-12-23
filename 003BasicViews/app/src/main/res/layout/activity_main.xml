@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.example.a004_basicviewsbinding.MainActivity">
 
     <!-- Name EditText -->
 
@@ -29,6 +29,30 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/edittext_email_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/edittext_username_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="@string/edittext_password_hint_text"
+        />
+    <EditText
+        android:id="@+id/mainActivityEditTextConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="@string/edittext_confirm_password_hint_text"
         />
 
     <!-- Horizontal Layout for Date Inputs -->

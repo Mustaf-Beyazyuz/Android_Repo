@@ -26,6 +26,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
     compileOptions {
         isCoreLibraryDesugaringEnabled
         sourceCompatibility = JavaVersion.VERSION_17

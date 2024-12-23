@@ -1,4 +1,4 @@
-package com.example.a003_basicviews.viewModel
+package com.example.a004_basicviewsbinding.viewModel
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit
 class RegisterInfo (var name : String,var email : String,var birthDate: LocalDate,
                     val usarname : String,val password : String){
     @RequiresApi(Build.VERSION_CODES.O)
-    private val mFormatter = DateTimeFormatter.ofPattern("dd/Mm/yyyy")
+    private val mFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 
     val age : Double
         @RequiresApi(Build.VERSION_CODES.O)

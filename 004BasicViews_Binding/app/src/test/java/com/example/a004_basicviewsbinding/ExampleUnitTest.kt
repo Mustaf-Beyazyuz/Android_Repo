@@ -1,4 +1,4 @@
-package com.example.a003_basicviews
+package com.example.a004_basicviewsbinding
 
 import org.junit.Test
 
