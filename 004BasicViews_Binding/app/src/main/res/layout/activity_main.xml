@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+      <import type="com.example.a004_basicviewsbinding.viewModel.RegisterInfo"/>
+        <variable
+            name="registerInfoViewModel"
+            type="RegisterInfo" />
+        <variable
+            name="result"
+            type="String" />
+
+
+    </data>
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout"
@@ -19,6 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="@{registerInfoViewModel.name}"
         android:hint="@string/edittext_name_hint_text" />
 
     <!-- Email EditText -->
@@ -49,7 +64,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_weight="10"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:hint="@string/edittext_password_hint_text"
         />
 
@@ -69,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:hint="@string/edittext_confirm_password_hint_text"
         />
 
@@ -134,14 +149,27 @@
             android:text="@string/button_register_text" />
 
         <Button
+            android:id="@+id/mainActivityClearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_clear_text" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
             android:id="@+id/mainActivityCloseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_close_text" />
 
-
     </LinearLayout>
-
-
 </LinearLayout>
+</layout>

@@ -6,8 +6,8 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 
-class RegisterInfo (var name : String,var email : String,var birthDate: LocalDate,
-                    val usarname : String,val password : String){
+class RegisterInfo (var name : String = "",var email : String ="",var birthDate: LocalDate = LocalDate.now(),
+                    val usarname : String = "",val password : String = ""){
     @RequiresApi(Build.VERSION_CODES.O)
     private val mFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 

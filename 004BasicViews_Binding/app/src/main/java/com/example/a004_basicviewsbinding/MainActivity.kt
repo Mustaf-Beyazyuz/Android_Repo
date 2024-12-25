@@ -1,15 +1,17 @@
 package com.example.a004_basicviewsbinding
 
+import android.app.Activity
 import android.os.Build
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
+import android.text.InputType
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.children
+import androidx.databinding.DataBindingUtil
 import com.example.a003_basicviews.R
 import com.example.a003_basicviews.databinding.ActivityMainBinding
 import com.example.a004_basicviewsbinding.globalAlert.promptDecision
@@ -79,8 +81,25 @@ Toast.makeText(this,R.string.message_continue,Toast.LENGTH_SHORT).show()
         ,R.string.yes_button_text,R.string.no_button_text,
             {_,_-> pozitiveButtonClickerCallBack()}) {_,_ -> negativeButtonClickerCallBack()}
     }
+    private fun clearEditText()
+    {
+        mBinding.mainActivityEditTextPassword.setText("")
+        for(view in mBinding.LinearLayout.children)
+        {
+            if(view is EditText)
+                view.setText("")
+        }
+    }
 
-    // Kayıt butonuna tıklama işlemi
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun clearButtonClickCallBack() {
+        clearEditText()
+        initBirthDateTexts()
+        mBinding.mainActivityCheckBoxAcceptConditions.isChecked = false
+        showPasswordButtonClickedCallback()
+
+    }
     @RequiresApi(Build.VERSION_CODES.O)
     private fun registerButtonClickedCallback()
     {
@@ -113,6 +132,13 @@ Toast.makeText(this,R.string.message_continue,Toast.LENGTH_SHORT).show()
     {
         mBinding.mainActivityCloseButton.apply { setOnClickListener{closeButtonClickCallBack()} }
     }
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun initClearButton()
+    {
+        mBinding.mainActivityClearButton.apply { setOnClickListener{clearButtonClickCallBack()} }
+
+
+    }
 
     private fun initAcceptCheckBox()
     {
@@ -122,39 +148,60 @@ Toast.makeText(this,R.string.message_continue,Toast.LENGTH_SHORT).show()
                     .mainActivityButtonRegister.isEnabled = checked }
     }
 
-    private fun initBinding(){
+    private fun initBinding() {
 
-        mBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
+        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        mBinding.registerInfoViewModel
 
     }
 
-    private fun showPasswordButtonCliked()
-    {
-        mBinding.mainActivityShowPasswordButton.run {
+    private fun changeShowPasswordButtonText() {
+        with(mBinding.mainActivityShowPasswordButton) {
             val show = tag as Boolean
-            val resId = if (show) R.string.button_hide_password_text
-            else R.string.button_show_password_text
+            val resId = if (show) R.string.button_hide_password_text else R.string.button_show_password_text
 
             setText(resId)
+
+            val showInput = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            val hideInput = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_TEXT_VARIATION_PASSWORD
+
+            mBinding.mainActivityEditTextPassword.inputType =
+                if(show)showInput else InputType.TYPE_NUMBER_VARIATION_PASSWORD
             tag = !show
         }
     }
 
-    private fun initShowPasswordButton()
-    {
-        mBinding.mainActivityShowPasswordButton.tag = true
-      mBinding.mainActivityShowPasswordButton.apply { setOnClickListener {showPasswordButtonCliked()} }
+    private fun showPasswordButtonClickedCallback() {
+        changeShowPasswordButtonText()
     }
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun initBirthDateTexts()
+    {
+        val today = LocalDate.now()
+        mBinding.mainActivityEditTextDay.setText(today.dayOfMonth)
+        mBinding.mainActivityEditTextMonth.setText(today.monthValue)
+        mBinding.mainActivityEditTextYear.setText(today.year)
+    }
+
+    private fun initShowPasswordButton() {
+        mBinding.mainActivityShowPasswordButton.apply {
+            tag = true
+            setOnClickListener { showPasswordButtonClickedCallback()}
+        }
+    }
+
 
 
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun initViews()
     {
-        initShowPasswordButton()
+
         initBinding()
+        initBirthDateTexts()
+        initShowPasswordButton()
         initRegisterButton()
+        initClearButton()
         initCloseButton()
         initAcceptCheckBox()
 
