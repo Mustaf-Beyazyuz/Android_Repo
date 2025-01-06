@@ -30,10 +30,10 @@ com.mustafabeyazyuz.basicviews.app-savedstate-1.2.1-28 C:\Users\Mustafa Beyazyuz
 com.mustafabeyazyuz.basicviews.app-viewpager2-1.0.0-29 C:\Users\Mustafa Beyazyuz\.gradle\caches\transforms-4\f064743b160f9dcc001c664190e03849\transformed\viewpager2-1.0.0\res
 com.mustafabeyazyuz.basicviews.app-databinding-adapters-8.6.0-30 C:\Users\Mustafa Beyazyuz\.gradle\caches\transforms-4\f497cec05c303cae5fac7ef8da36d3b9\transformed\databinding-adapters-8.6.0\res
 com.mustafabeyazyuz.basicviews.app-lifecycle-runtime-2.6.2-31 C:\Users\Mustafa Beyazyuz\.gradle\caches\transforms-4\f82036b8ff23e193f6150e74903ba837\transformed\lifecycle-runtime-2.6.2\res
-com.mustafabeyazyuz.basicviews.app-pngs-32 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\generated\res\pngs\debug
-com.mustafabeyazyuz.basicviews.app-resValues-33 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\generated\res\resValues\debug
-com.mustafabeyazyuz.basicviews.app-packageDebugResources-34 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.mustafabeyazyuz.basicviews.app-packageDebugResources-35 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.mustafabeyazyuz.basicviews.app-debug-36 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.mustafabeyazyuz.basicviews.app-debug-37 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\src\debug\res
-com.mustafabeyazyuz.basicviews.app-main-38 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\src\main\res
+com.mustafabeyazyuz.basicviews.app-pngs-32 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\build\generated\res\pngs\debug
+com.mustafabeyazyuz.basicviews.app-resValues-33 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\build\generated\res\resValues\debug
+com.mustafabeyazyuz.basicviews.app-packageDebugResources-34 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.mustafabeyazyuz.basicviews.app-packageDebugResources-35 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.mustafabeyazyuz.basicviews.app-debug-36 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.mustafabeyazyuz.basicviews.app-debug-37 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\src\debug\res
+com.mustafabeyazyuz.basicviews.app-main-38 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\Android_Repo\005BasicViewsDataBinding\app\src\main\res
