@@ -1,3 +1,0 @@
-com.mustafabeyazyuz.basicviews.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

@@ -1,6 +1,0 @@
-com.mustafabeyazyuz.basicviews.test.app-tracing-1.2.0-0 C:\Users\Mustafa Beyazyuz\.gradle\caches\transforms-4\51b801412df90390ea338fca9e952083\transformed\tracing-1.2.0\res
-com.mustafabeyazyuz.basicviews.test.app-core-1.6.1-1 C:\Users\Mustafa Beyazyuz\.gradle\caches\transforms-4\f1de0c4edc1152409866ec97a8de439c\transformed\core-1.6.1\res
-com.mustafabeyazyuz.basicviews.test.app-androidTest-2 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\generated\res\resValues\androidTest\debug
-com.mustafabeyazyuz.basicviews.test.app-mergeDebugAndroidTestResources-3 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.mustafabeyazyuz.basicviews.test.app-mergeDebugAndroidTestResources-4 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.mustafabeyazyuz.basicviews.test.app-debugAndroidTest-5 C:\Users\Mustafa Beyazyuz\AndroidStudioProjects\005BasicViewsDataBinding\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
