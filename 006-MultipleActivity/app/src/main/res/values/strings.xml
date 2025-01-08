@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">006-MultipleActivity</string>
+    <string name="button_register_text">Register</string>
+    <string name="button_login_text">Login</string>
+    <string name="button_close_text">Close</string>
+    <string name="edittext_username_hint">Input Username</string>
+    <string name="edittext_password_hint">Input Password</string>
+
+</resources>

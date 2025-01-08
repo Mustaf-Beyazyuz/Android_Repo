@@ -22,7 +22,7 @@ import org.csystem.android.app.basicviews.viewmodel.RegisterInfo
 import java.time.DateTimeException
 import java.time.LocalDate
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mMonths: Array<String>
 
