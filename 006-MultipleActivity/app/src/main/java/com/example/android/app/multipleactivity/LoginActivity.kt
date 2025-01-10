@@ -41,6 +41,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun loginButtonClicked()
     {
-        Intent(this,PaymentActivity::class.java).apply {startPaymentActivityCallback(this) }
+        Intent(this,PaymentActivity::class.java).apply {startActivity(this.putExtra(USER_NAME,mBinding.vievModel!!.username)) }
     }
 }
