@@ -7,25 +7,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
-import com.example.android.app.multipleactivity.Keys.USER_NAME
+import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
 import com.example.android.app.multipleactivity.databinding.ActivityLoginBinding
-import com.example.android.app.multipleactivity.databinding.ActivityMainBinding
-import com.example.android.app.multipleactivity.viewModel.LoginActivityViewModel
-import com.example.android.app.multipleactivity.viewModel.MaiActivityViewModel
+import com.example.android.app.multipleactivity.viewModel.LoginAtctivityListenersViewsModel
+import com.example.android.app.multipleactivity.viewModel.LoginInfo
+import java.time.LocalDateTime
+
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityLoginBinding
-    private fun startPaymentActivityCallback(intent : Intent)
-    {
-        startActivity(intent.putExtra(USER_NAME,mBinding.vievModel!!.username))
-    }
 
+
+    private fun initViewsModel()
+    {
+        mBinding.vievModel = LoginAtctivityListenersViewsModel(this)
+        mBinding.loginInfo = LoginInfo()
+    }
 
     private fun initialize()
     {
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_login)
-        mBinding.vievModel = LoginActivityViewModel(this)
+        initViewsModel()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
 
     fun loginButtonClicked()
     {
-        Intent(this,PaymentActivity::class.java).apply {startActivity(this.putExtra(USER_NAME,mBinding.vievModel!!.username)) }
+        Intent(this,PaymentActivity::class.java).
+            apply {mBinding.loginInfo!!.loginDateTime = LocalDateTime.now()
+            startActivity(this.putExtra(LOGIN_INFO,mBinding.loginInfo)) }
     }
 }

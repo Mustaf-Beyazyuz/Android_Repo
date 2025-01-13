@@ -5,5 +5,12 @@
     <string name="button_close_text">Close</string>
     <string name="edittext_username_hint">Input Username</string>
     <string name="edittext_password_hint">Input Password</string>
+    <string name="edittext_product_name">Product Name</string>
+    <string name="edittext_unit_price_hint">Unit Price</string>
+    <string name="edittext_unit_quantity_hint">Unit Quantity</string>
+    <string name="button_payment_close_text">Close</string>
+    <string name="button_clear_text">Clear</string>
+    <string name="button_calculate_text">Calculate</string>
+    <string name="button_exit_text">Exit</string>
 
 </resources>

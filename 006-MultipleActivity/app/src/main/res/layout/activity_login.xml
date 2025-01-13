@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-    <import type="com.example.android.app.multipleactivity.viewModel.LoginActivityViewModel"></import>
-        <variable
-            name="vievModel"
-            type="LoginActivityViewModel" />
+    <import type="com.example.android.app.multipleactivity.viewModel.LoginAtctivityListenersViewsModel"></import>
+        <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"></import>
+        <variable name="vievModel"  type="LoginAtctivityListenersViewsModel" />
+        <variable name="loginInfo"  type="LoginInfo" />
     </data>
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="@={vievModel.username}"
+            android:text="@={loginInfo.username}"
             android:hint="@string/edittext_username_hint"/>
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:text="@={vievModel.password}"
+            android:text="@={loginInfo.password}"
             android:hint="@string/edittext_password_hint"/>
 
         <Button

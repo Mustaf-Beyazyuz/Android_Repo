@@ -4,7 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel"/>
+        <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
+        <import type="java.time.format.DateTimeFormatter"/>
         <variable name="viewModel" type="PaymentActivityViewModel"/>
+        <variable name="loginInfo" type="LoginInfo"/>
 
     </data>
     <LinearLayout
@@ -19,8 +22,67 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.username }"
+            android:text="@{DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy  HH:hh:ss &quot;).format(loginInfo.loginDateTime) }"
+             />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{loginInfo.username }"
             />
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_clear_text" />
+
+        <EditText
+            android:id="@+id/edittext_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/edittext_product_name"
+            android:text="@={viewModel.name}"/>
+
+
+        <EditText
+            android:id="@+id/unit_price_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/edittext_unit_price_hint"
+            android:text="@={viewModel.unitPriceStr}"/>
+
+
+        <EditText
+            android:id="@+id/unit_quantity_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/edittext_unit_quantity_hint"
+            android:text="@={viewModel.quantityStr}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/button_calculate_text" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/button_exit_text" />
+
+        </LinearLayout>
     </LinearLayout>
 </layout>
 
