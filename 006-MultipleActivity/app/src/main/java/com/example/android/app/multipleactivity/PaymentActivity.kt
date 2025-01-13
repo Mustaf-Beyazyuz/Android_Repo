@@ -5,6 +5,7 @@ import android.database.DatabaseUtils
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +15,7 @@ import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
 import com.example.android.app.multipleactivity.viewModel.LoginInfo
 import com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel
+import com.example.android.app.multipleactivity.viewModel.PaymentInfo
 
 class PaymentActivity : AppCompatActivity() {
     private lateinit var mBinding : ActivityPaymentBinding
@@ -24,6 +26,7 @@ class PaymentActivity : AppCompatActivity() {
         mBinding.loginInfo= when{ VERSION.SDK_INT < VERSION_CODES.TIRAMISU ->intent.getSerializableExtra(LOGIN_INFO) as LoginInfo
             else -> intent.getSerializableExtra(LOGIN_INFO,LoginInfo::class.java)
         }
+        mBinding.result ="";
 
     }
     private fun initBinding()
@@ -52,6 +55,17 @@ class PaymentActivity : AppCompatActivity() {
     }
     fun  payButtonClicked()
     {
+        try {
+            var pi = PaymentInfo(mBinding.viewModel!!.name,
+                mBinding.viewModel!!.unitPriceStr.toDouble(),
+                mBinding.viewModel!!.quantityStr.toInt())
+
+            mBinding.result= pi.toString()
+        }
+        catch(ignore : Throwable)
+        {
+            Toast.makeText(this,"Problem occurs",Toast.LENGTH_SHORT).show()
+        }
 
     }
     fun  clearButtonClicked()
@@ -60,7 +74,7 @@ class PaymentActivity : AppCompatActivity() {
     }
     fun  exitButtonClicked()
     {
-
+      finish()
     }
 
 }
