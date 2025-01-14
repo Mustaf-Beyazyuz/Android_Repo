@@ -1,21 +1,26 @@
 package com.example.android.app.multipleactivity
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.database.DatabaseUtils
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
 import com.example.android.app.multipleactivity.viewModel.LoginInfo
 import com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel
 import com.example.android.app.multipleactivity.viewModel.PaymentInfo
+
 
 class PaymentActivity : AppCompatActivity() {
     private lateinit var mBinding : ActivityPaymentBinding
@@ -70,11 +75,19 @@ class PaymentActivity : AppCompatActivity() {
     }
     fun  clearButtonClicked()
     {
-
+        for (view in mBinding.main.children)
+            if (view is EditText)
+                view.setText("")
     }
     fun  exitButtonClicked()
     {
-      finish()
+                 AlertDialog.Builder(this)
+                .setTitle("Exit Alert Dialog")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes") {_,_ -> finish()}
+                .setNegativeButton("No") {dialog,_ -> dialog.dismiss() }
+                .create()
+                .show()
     }
 
 }
