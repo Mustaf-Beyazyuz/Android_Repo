@@ -7,10 +7,14 @@
     <data>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel"/>
         <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
-        <import type="java.time.format.DateTimeFormatter"/>
+        <import type="com.example.android.app.multipleactivity.binding.PaymentQuantityToStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.viewModel.PaymentInfo"/>
+        <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
+        <import type="com.example.android.app.multipleactivity.binding.PaymenUnitPriceToStringConverter"/>
         <variable name="viewModel" type="PaymentActivityViewModel"/>
         <variable name="loginInfo" type="LoginInfo"/>
         <variable name="result" type="String"/>
+        <variable name="paymentInfo" type="PaymentInfo"/>
 
 
     </data>
@@ -49,7 +53,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/edittext_product_name"
-            android:text="@={viewModel.name}"/>
+            android:text="@={paymentInfo.name}"/>
 
 
         <EditText
@@ -58,7 +62,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/edittext_unit_price_hint"
-            android:text="@={viewModel.unitPriceStr}"/>
+            android:text="@={PaymenUnitPriceToStringConverter.toStr()}"/>
 
 
         <EditText
@@ -67,7 +71,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/edittext_unit_quantity_hint"
-            android:text="@={viewModel.quantityStr}"/>
+            android:text="@={PaymentQuantityToStringConverter.toStr()}"/>
 
         <LinearLayout
             android:layout_width="match_parent"

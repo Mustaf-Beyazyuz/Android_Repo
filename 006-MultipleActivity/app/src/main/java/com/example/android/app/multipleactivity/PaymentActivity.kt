@@ -16,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
+import com.example.android.app.multipleactivity.binding.PaymenUnitPriceToStringConverter
+import com.example.android.app.multipleactivity.binding.PaymentQuantityToStringConverter
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
 import com.example.android.app.multipleactivity.viewModel.LoginInfo
 import com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel
@@ -31,7 +33,10 @@ class PaymentActivity : AppCompatActivity() {
         mBinding.loginInfo= when{ VERSION.SDK_INT < VERSION_CODES.TIRAMISU ->intent.getSerializableExtra(LOGIN_INFO) as LoginInfo
             else -> intent.getSerializableExtra(LOGIN_INFO,LoginInfo::class.java)
         }
+        mBinding.paymentInfo = PaymentInfo()
         mBinding.result ="";
+        PaymentQuantityToStringConverter.errorStr = "invalid quantity"
+        PaymenUnitPriceToStringConverter.errorStr = "invalid Unit price"
 
     }
     private fun initBinding()
@@ -61,11 +66,11 @@ class PaymentActivity : AppCompatActivity() {
     fun  payButtonClicked()
     {
         try {
-            var pi = PaymentInfo(mBinding.viewModel!!.name,
-                mBinding.viewModel!!.unitPriceStr.toDouble(),
-                mBinding.viewModel!!.quantityStr.toInt())
-
-            mBinding.result= pi.toString()
+            if(PaymenUnitPriceToStringConverter.statusStr.isNotEmpty()){
+                Toast.makeText(this,PaymentQuantityToStringConverter.statusStr,,Toast.LENGTH_SHORT).show()
+                return
+            }
+            mBinding.result = mBinding.paymentInfo!!.toString()
         }
         catch(ignore : Throwable)
         {
