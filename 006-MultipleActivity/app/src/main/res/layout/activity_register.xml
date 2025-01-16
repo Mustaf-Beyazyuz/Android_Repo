@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
 
-        <data>
-
-        </data>
-
+        <import type="com.example.android.app.multipleactivity.viewModel.RegisterAtctivityListenersViewsModel"/>
+        <import type="com.example.android.app.multipleactivity.viewModel.RegisterInfo"/>
+        <import type="com.example.android.app.multipleactivity.binding.RegisterBirthdateStringConverter"/>
+        <variable name="registerInfo" type="RegisterInfo" />
+        <variable name="viewModel" type="RegisterAtctivityListenersViewsModel" />
+</data>
         <LinearLayout
+            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".RegisterActivity">
 
+                <EditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:text="@={RegisterBirthdateStringConverter.toStr(registerInfo.birthDate )}" />
 
                 <EditText
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:ems="10"
-                    android:inputType="text"
-                    android:text="Name" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:text="@={registerInfo.email}" />
 
                 <EditText
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:ems="10"
-                    android:inputType="textPassword" />
-                 </LinearLayout>
+                    android:inputType="textPassword"
+                    android:text="@={registerInfo.password}" />
+
 
                 <Button
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:text="Register" />
-
-
+        </LinearLayout>
 
 </layout>

@@ -17,7 +17,7 @@ import com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringCon
 import com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
 import com.example.android.app.multipleactivity.viewModel.LoginInfo
-import com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel
+import com.example.android.app.multipleactivity.viewModel.PaymentActivityListenersViewModel
 
 
 class PaymentActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class PaymentActivity : AppCompatActivity() {
 
     private fun initViewsModel()
     {
-        mBinding.viewModel = PaymentActivityViewModel(this)
+        mBinding.viewModel = PaymentActivityListenersViewModel(this)
         mBinding.loginInfo= when{ VERSION.SDK_INT < VERSION_CODES.TIRAMISU ->intent.getSerializableExtra(LOGIN_INFO) as LoginInfo
             else -> intent.getSerializableExtra(LOGIN_INFO,LoginInfo::class.java)
         }

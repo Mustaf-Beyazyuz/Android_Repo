@@ -5,12 +5,12 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel"/>
+        <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityListenersViewModel"/>
         <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
         <import type="com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter"/>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentInfo"/>
         <import type="com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringConverter"/>
-        <variable name="viewModel" type="PaymentActivityViewModel"/>
+        <variable name="viewModel" type="PaymentActivityListenersViewModel"/>
         <variable name="loginInfo" type="LoginInfo"/>
         <variable name="result" type="String"/>
         <variable name="paymentInfo" type="PaymentInfo"/>
