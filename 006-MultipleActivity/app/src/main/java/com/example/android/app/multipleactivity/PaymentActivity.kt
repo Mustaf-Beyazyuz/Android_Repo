@@ -1,9 +1,6 @@
 package com.example.android.app.multipleactivity
 
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.Intent
-import android.database.DatabaseUtils
+import  android.app.AlertDialog
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
@@ -16,12 +13,11 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
-import com.example.android.app.multipleactivity.binding.PaymenUnitPriceToStringConverter
-import com.example.android.app.multipleactivity.binding.PaymentQuantityToStringConverter
+import com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringConverter
+import com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
 import com.example.android.app.multipleactivity.viewModel.LoginInfo
 import com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel
-import com.example.android.app.multipleactivity.viewModel.PaymentInfo
 
 
 class PaymentActivity : AppCompatActivity() {
@@ -33,10 +29,9 @@ class PaymentActivity : AppCompatActivity() {
         mBinding.loginInfo= when{ VERSION.SDK_INT < VERSION_CODES.TIRAMISU ->intent.getSerializableExtra(LOGIN_INFO) as LoginInfo
             else -> intent.getSerializableExtra(LOGIN_INFO,LoginInfo::class.java)
         }
-        mBinding.paymentInfo = PaymentInfo()
         mBinding.result ="";
-        PaymentQuantityToStringConverter.errorStr = "invalid quantity"
-        PaymenUnitPriceToStringConverter.errorStr = "invalid Unit price"
+        PaymentQuantityStringConverter.failStr = "invalid quantity"
+        PaymenUnitPriceStringConverter.failStr = "invalid Unit price"
 
     }
     private fun initBinding()
@@ -63,13 +58,28 @@ class PaymentActivity : AppCompatActivity() {
         }
         initialize()
     }
+    private fun checkFailListAppCallback(list: MutableList<String>) : List<String>
+    {
+        if (PaymentQuantityStringConverter.fail)
+           list.add(PaymentQuantityStringConverter.failStr)
+
+        if (PaymenUnitPriceStringConverter.fail)
+            list.add(PaymenUnitPriceStringConverter.failStr)
+
+
+        if (list.isNotEmpty())
+            Toast.makeText(this,list.joinToString { "\n" }, Toast.LENGTH_SHORT).show()
+
+        return list
+    }
+fun checkFail() : List<String> = ArrayList<String>().apply { checkFailListAppCallback(this) }
+
+
+
     fun  payButtonClicked()
     {
         try {
-            if(PaymenUnitPriceToStringConverter.statusStr.isNotEmpty()){
-                Toast.makeText(this,PaymentQuantityToStringConverter.statusStr,,Toast.LENGTH_SHORT).show()
-                return
-            }
+            mBinding.result= ""
             mBinding.result = mBinding.paymentInfo!!.toString()
         }
         catch(ignore : Throwable)

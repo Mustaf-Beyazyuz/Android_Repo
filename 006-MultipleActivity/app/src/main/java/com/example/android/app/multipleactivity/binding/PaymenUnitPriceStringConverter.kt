@@ -1,16 +1,13 @@
 package com.example.android.app.multipleactivity.binding
 
-import android.content.Context
-import androidx.annotation.Nullable
 import androidx.databinding.InverseMethod
 
-object PaymenUnitPriceToStringConverter {
+object PaymenUnitPriceStringConverter {
+    private var mFail = false
+    val fail: Boolean
+        get() = mFail
 
-   private var mStatusStr = ""
-    val statusStr: String
-        get() = mStatusStr
-
-    var errorStr = ""
+    var failStr = ""
 
 
     @InverseMethod("toStr")
@@ -25,7 +22,7 @@ object PaymenUnitPriceToStringConverter {
         }
         catch (ignore : NumberFormatException)
         {
-            mStatusStr = errorStr
+            mFail = true
         }
           return result
 

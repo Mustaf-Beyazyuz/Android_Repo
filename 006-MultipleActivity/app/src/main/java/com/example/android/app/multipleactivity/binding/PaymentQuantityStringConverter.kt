@@ -2,26 +2,26 @@ package com.example.android.app.multipleactivity.binding
 
 import androidx.databinding.InverseMethod
 
-object PaymentQuantityToStringConverter {
-    private var mStatusStr = ""
-    val statusStr: String
-        get() = mStatusStr
+object PaymentQuantityStringConverter {
+    private var mFail = false
+    val fail: Boolean
+        get() = mFail
 
-    var errorStr = ""
+    var failStr = ""
 
     @InverseMethod("toStr")
     @JvmStatic
-    fun toDouble(str: String): Double
+    fun toInt(str: String): Int
     {
-        var result = 0.0
+        var result = 0
         try {
 
-            result = str.toDouble()
+            result = str.toInt()
 
         }
         catch (ignore : NumberFormatException)
         {
-            mStatusStr = errorStr
+            mFail = true
         }
         return result
 

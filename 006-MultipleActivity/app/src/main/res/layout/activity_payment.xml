@@ -7,10 +7,9 @@
     <data>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityViewModel"/>
         <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
-        <import type="com.example.android.app.multipleactivity.binding.PaymentQuantityToStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter"/>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentInfo"/>
-        <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
-        <import type="com.example.android.app.multipleactivity.binding.PaymenUnitPriceToStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringConverter"/>
         <variable name="viewModel" type="PaymentActivityViewModel"/>
         <variable name="loginInfo" type="LoginInfo"/>
         <variable name="result" type="String"/>
@@ -37,7 +36,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy  HH:hh:ss &quot;).format(loginInfo.loginDateTime)  }"
+            android:text="@{java.time.format.DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy  HH:hh:ss &quot;).format(loginInfo.loginDateTime)  }"
             />
 
         <Button
