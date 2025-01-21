@@ -1,9 +1,12 @@
 package com.example.android.app.multipleactivity.viewModel
 
 import com.example.android.app.multipleactivity.LoginActivity
+import java.lang.ref.WeakReference
 
-data class RegisterAtctivityListenersViewsModel(val activity: LoginActivity) {
+class RegisterAtctivityListenersViewsModel(val activity: LoginActivity) {
 
 
-    fun handleLoginButton() = activity.loginButtonClicked()
+    private val mWeakReference = WeakReference(activity)
+
+    fun handleLoginButton() = mWeakReference.get()?.loginButtonClicked()
 }
