@@ -1,11 +1,15 @@
 package com.example.android.app.multipleactivity.viewModel
 
+import android.app.Activity
 import com.example.android.app.multipleactivity.MainActivity
+import java.lang.ref.WeakReference
 
-data class MaiActivityViewModel (val activity: MainActivity){
-    fun handleRegisterButton() = activity.registerButtonClicked()
-    fun handleLoginButton() = activity.loginButtonClicked()
-    fun handleCloseButton() = activity.closeButtonClicked()
+class MaiActivityViewModel (val activity: MainActivity){
+
+    private val mBWeakReference = WeakReference(activity)
+    fun handleRegisterButton() = mBWeakReference.get()?.registerButtonClicked()
+    fun handleLoginButton() = mBWeakReference.get()?.loginButtonClicked()
+    fun handleCloseButton() = mBWeakReference.get()?.closeButtonClicked()
 
 
 }
