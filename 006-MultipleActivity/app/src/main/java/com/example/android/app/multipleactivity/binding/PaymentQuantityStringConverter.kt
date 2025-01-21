@@ -28,5 +28,5 @@ object PaymentQuantityStringConverter {
 
     }
     @JvmStatic
-    fun toStr(quantity : Int) = quantity.toString()
+    fun toStr(quantity: Int) = quantity.toString()
 }

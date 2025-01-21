@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/edittext_unit_price_hint"
-            android:text="@={PaymenUnitPriceToStringConverter.toStr()}"/>
+            android:text="@={PaymenUnitPriceStringConverter.toStr(paymentInfo.unitprice)}"/>
 
 
         <EditText
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/edittext_unit_quantity_hint"
-            android:text="@={PaymentQuantityToStringConverter.toStr()}"/>
+            android:text="@={PaymentQuantityStringConverter.toStr(paymentInfo.quantity)}"/>
 
         <LinearLayout
             android:layout_width="match_parent"
