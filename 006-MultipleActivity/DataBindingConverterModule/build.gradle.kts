@@ -1,26 +1,18 @@
-import com.android.build.gradle.internal.utils.isKotlinKaptPluginApplied
-
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.android.app.multipleactivity"
+    namespace = "com.example.android.app.multipleactivity.library.databinding"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.android.app.multipleactivity"
-        minSdk = 25
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures{
-        viewBinding = true
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -33,7 +25,6 @@ android {
         }
     }
     compileOptions {
-        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -46,7 +37,8 @@ android {
 dependencies {
 
 
-    implementation(project(":DataBindingConverterModule"))
+    implementation(files("libs/org-csystem-android-util-datetime-release-20.0.0.aar"))
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar","*.aar"))))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
