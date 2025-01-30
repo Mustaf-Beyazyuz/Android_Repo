@@ -78,15 +78,12 @@ fun checkFail() : List<String> = ArrayList<String>().apply { checkFailListAppCal
 
     fun  payButtonClicked()
     {
-        try {
-            mBinding.result= ""
-            mBinding.result = mBinding.paymentInfo!!.toString()
-        }
-        catch(ignore : Throwable)
-        {
-            Toast.makeText(this,"Problem occurs",Toast.LENGTH_SHORT).show()
-        }
+        mBinding.result= ""
+        if(checkFail().isNotEmpty())
+            return
 
+
+        mBinding.result = mBinding.paymentInfo!!.toString()
     }
     fun  clearButtonClicked()
     {
