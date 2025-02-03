@@ -7,9 +7,9 @@
     <data>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentActivityListenersViewModel"/>
         <import type="com.example.android.app.multipleactivity.viewModel.LoginInfo"/>
-        <import type="com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.library.databinding.converter.PaymentQuantityStringConverter"/>
         <import type="com.example.android.app.multipleactivity.viewModel.PaymentInfo"/>
-        <import type="com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.library.databinding.converter.PaymenUnitPriceStringConverter"/>
         <variable name="viewModel" type="PaymentActivityListenersViewModel"/>
         <variable name="loginInfo" type="LoginInfo"/>
         <variable name="result" type="String"/>

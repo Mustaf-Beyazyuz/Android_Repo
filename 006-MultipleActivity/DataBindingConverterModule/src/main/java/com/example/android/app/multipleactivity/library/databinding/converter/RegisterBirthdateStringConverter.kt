@@ -1,4 +1,4 @@
-package com.example.android.app.multipleactivity.binding
+package com.example.android.app.multipleactivity.library.databinding.converter
 
 import androidx.databinding.InverseMethod
 import java.time.LocalDate

@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "006-MultipleActivity"
-include(":app")
-include(":DataBindingConverterModule")
+rootProject.name = "CSDLibs"
+include(":org-csystem-android-util-datetime")
