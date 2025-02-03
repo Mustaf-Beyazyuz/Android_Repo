@@ -7,6 +7,7 @@
         <import type="com.example.android.app.multipleactivity.binding.RegisterBirthdateStringConverter"/>
         <variable name="registerInfo" type="RegisterInfo" />
         <variable name="viewModel" type="RegisterAtctivityListenersViewsModel" />
+        <variable name="confirmPassword" type="String" />
 </data>
         <LinearLayout
             xmlns:tools="http://schemas.android.com/tools"
@@ -41,6 +42,16 @@
                     android:text="@={registerInfo.password}" />
 
 
+                <Button
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register" />
+                <Button
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register" />
                 <Button
 
                     android:layout_width="match_parent"
