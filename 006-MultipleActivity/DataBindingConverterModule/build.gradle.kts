@@ -38,7 +38,6 @@ dependencies {
 
 
     implementation(files("libs/org-csystem-android-util-datetime-release-20.0.0.aar"))
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar","*.aar"))))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -1,6 +1,6 @@
 package com.example.android.app.multipleactivity.viewModel
 
-import com.example.android.app.multipleactivity.LoginActivity
+import org.csystem.android.activity.LoginActivity
 import java.lang.ref.WeakReference
 
 class RegisterAtctivityListenersViewsModel(val activity: LoginActivity) {

@@ -13,11 +13,11 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import com.example.android.app.multipleactivity.Keys.LOGIN_INFO
-import com.example.android.app.multipleactivity.binding.PaymenUnitPriceStringConverter
-import com.example.android.app.multipleactivity.binding.PaymentQuantityStringConverter
+import com.example.android.app.multipleactivity.library.databinding.converter.PaymentQuantityStringConverter
+import com.example.android.app.multipleactivity.library.databinding.converter.PaymenUnitPriceStringConverter
 import com.example.android.app.multipleactivity.databinding.ActivityPaymentBinding
-import com.example.android.app.multipleactivity.viewModel.LoginInfo
 import com.example.android.app.multipleactivity.viewModel.PaymentActivityListenersViewModel
+import org.csystem.android.activity.viewmodel.LoginInfo
 
 
 class PaymentActivity : AppCompatActivity() {

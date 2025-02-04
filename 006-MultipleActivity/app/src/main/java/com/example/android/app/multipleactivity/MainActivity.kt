@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.app.multipleactivity.databinding.ActivityMainBinding
 import com.example.android.app.multipleactivity.viewModel.MaiActivityViewModel
+import org.csystem.android.activity.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 

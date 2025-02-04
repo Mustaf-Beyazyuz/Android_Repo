@@ -4,7 +4,7 @@
 
         <import type="com.example.android.app.multipleactivity.viewModel.RegisterAtctivityListenersViewsModel"/>
         <import type="com.example.android.app.multipleactivity.viewModel.RegisterInfo"/>
-        <import type="com.example.android.app.multipleactivity.binding.RegisterBirthdateStringConverter"/>
+        <import type="com.example.android.app.multipleactivity.library.databinding.converter.RegisterBirthdateStringConverter"/>
         <variable name="registerInfo" type="RegisterInfo" />
         <variable name="viewModel" type="RegisterAtctivityListenersViewsModel" />
         <variable name="confirmPassword" type="String" />
