@@ -1,7 +1,6 @@
 package com.example.android.app.multipleactivity
 
 import android.content.Intent
-import android.database.DatabaseUtils
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
