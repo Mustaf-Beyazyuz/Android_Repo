@@ -1,17 +1,17 @@
-package com.mustafabeyazyuz.module
+package com.mustafabeyazyuz.module.datetime
 
 import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import java.time.LocalDateTime
 import dagger.hilt.android.qualifiers.ApplicationContext
+import java.time.LocalDate
 
 @Module
 @InstallIn
-object DateTimeModule {
+object DateModule {
 
     @Provides
-    fun provideDateTime(@ApplicationContext context: Context) = LocalDateTime.now()
+    fun provideLocalDate(@ApplicationContext context: Context) = LocalDate.now()
 
 }
