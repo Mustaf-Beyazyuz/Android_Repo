@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object TimeFormatterModule {
+object LocalTimeFormatterModule {
 
     @Provides
     @Singleton

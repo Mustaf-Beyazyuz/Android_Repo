@@ -1,6 +1,7 @@
 package com.mustafabeyazyuz.module.datetime
 
 import android.content.Context
+import com.mustafabeyazyuz.android.hilt.datatime.annotation.LocalDateInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 object DateModule {
 
     @Provides
-    @Singleton
+    @LocalDateInterceptor
     fun provideLocalDate(@ApplicationContext context: Context): LocalDate {
         return LocalDate.now()
     }

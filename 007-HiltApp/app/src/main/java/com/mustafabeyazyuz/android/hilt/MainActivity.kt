@@ -6,6 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.mustafabeyazyuz.android.hilt.datatime.DateInfo
+import com.mustafabeyazyuz.android.hilt.datatime.DateTimeInfo
+import com.mustafabeyazyuz.android.hilt.datatime.TimeInfo
 import com.mustafabeyazyuz.module.formatter.annotation.DateFormatterInterceptor
 import com.mustafabeyazyuz.module.formatter.annotation.DateTimeFormatterInterceptor
 import com.mustafabeyazyuz.module.formatter.annotation.TimeFormatterInterceptor
@@ -20,31 +23,18 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var dateTime: LocalDateTime
+    lateinit var dateTimeInfo: DateTimeInfo
 
     @Inject
-    lateinit var date: LocalDate
+    lateinit var  dateInfo : DateInfo
 
     @Inject
-    lateinit var time: LocalTime
-
-    @Inject
-    @DateTimeFormatterInterceptor
-    lateinit var dateTimeFormatter: DateTimeFormatter
-
-    @Inject
-    @DateFormatterInterceptor
-    lateinit var dateFormatter: DateTimeFormatter
-
-    @Inject
-    @TimeFormatterInterceptor
-    lateinit var timeFormatter: DateTimeFormatter
+    lateinit var timeInfo: TimeInfo
 
     private fun showDateTime() {
-        val sb = StringBuilder()
-            .append("DateTime: ")
-            .append(dateTimeFormatter.format(dateTime))
-            .append("\n")
+        val sb = StringBuilder().append("DateTime: ").append(dateTimeInfo.toString()).append("\n")
+            .append("Date: ").append(dateInfo.toString()).append("\n")
+            .append("Time: ").append(timeInfo.toString())
 
         Toast.makeText(this, sb.toString(), Toast.LENGTH_LONG).show()
     }
@@ -64,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        Toast.makeText(this, dateTimeFormatter.format(dateTime), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, dateTimeInfo.toString(), Toast.LENGTH_LONG).show()
     }
 
     override fun onResume() {
