@@ -1,10 +1,11 @@
 package com.mustafabeyazyuz.module.formatter
 
-import com.mustafabeyazyuz.module.formatter.annotation.TimeFormatterInterceptor
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import org.csystem.android.util.datetime.di.module.formatter.annotation.LocalTimeFormatterInterceptor
 import java.time.format.DateTimeFormatter
 import javax.inject.Singleton
 
@@ -14,8 +15,6 @@ object LocalTimeFormatterModule {
 
     @Provides
     @Singleton
-    @TimeFormatterInterceptor
-    fun provideFormatter(): DateTimeFormatter {
-        return DateTimeFormatter.ofPattern("hh:mm:ss")
-    }
+    @LocalTimeFormatterInterceptor
+    fun provideFormatter(): DateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss")
 }

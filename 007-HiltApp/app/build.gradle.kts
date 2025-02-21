@@ -12,10 +12,10 @@ android {
 
     defaultConfig {
         applicationId = "com.mustafabeyazyuz.android.hilt"
-        minSdk = 22
+        minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 20
+        versionName = "21.0.0 "
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +41,7 @@ android {
 
 dependencies {
 
+    implementation(files("libs/org-csystem-android-util-datetime-release-21.0.0.aar"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
