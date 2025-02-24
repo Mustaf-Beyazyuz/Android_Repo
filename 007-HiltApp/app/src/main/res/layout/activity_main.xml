@@ -1,19 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mustafabeyazyuz.android.hilt.viewmodel.MainActivityListenerViewModel"/>
+        <import type="com.mustafabeyazyuz.android.hilt.viewmodel.OperationInfo"/>
+        <import type="com.mustafabeyazyuz.android.hilt.binding.convertor.FirstNumberConvertor"/>
+        <import type="com.mustafabeyazyuz.android.hilt.binding.convertor.SecondNumberConvertor"/>
+        <import type="com.mustafabeyazyuz.android.hilt.binding.convertor.OperationConvertor"/>
+
+        <variable
+            name="vievModel" type="MainActivityListenerViewModel" />
+        <variable
+            name="operationInfo" type="OperationInfo" />
+        <variable
+            name="resultText" type="String" />
+
+
+    </data>
+<LinearLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/edittext_first_hint_text"
+        android:inputType="numberSigned"
+        android:text="@={FirstNumberConvertor.INSTANCE.toStr(operationInfo.first) }"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/edittext_second_hint_text"
+        android:inputType="numberSigned"
+        android:text="@={SecondNumberConvertor.INSTANCE.toStr(operationInfo.second) }"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/edittext_operation_hint_text"
+        android:text="@={OperationConvertor.INSTANCE.toStr(operationInfo.op) }" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> vievModel.handleCalcuateButton()}"
+        android:text="@string/button_calculate_text" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="@{resultText}" />
+</LinearLayout>
+</layout>
