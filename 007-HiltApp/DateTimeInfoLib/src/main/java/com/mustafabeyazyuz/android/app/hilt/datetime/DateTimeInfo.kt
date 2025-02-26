@@ -1,4 +1,4 @@
-package com.mustafabeyazyuz.android.hilt.datatime
+package com.mustafabeyazyuz.android.app.hilt.datetime
 
 import android.content.Context
 import android.widget.Toast
