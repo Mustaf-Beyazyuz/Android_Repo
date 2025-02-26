@@ -4,6 +4,25 @@
             "outputFile": "com.mustafabeyazyuz.basicviews.app-mergeDebugResources-34:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Mustafa Beyazyuz\\Documents\\GitHub\\Android_Repo\\005BasicViewsDataBinding\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "337"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "183"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Mustafa Beyazyuz\\.gradle\\caches\\transforms-4\\1faedc4b8ec8ce5d7c107129a27884bd\\transformed\\appcompat-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -35,25 +54,6 @@
                         "startOffsets": "820,895,1006,1095,1196,1303,1410,1509,1616,1719,1846,1934,2058,2160,2262,2378,2480,2594,2722,2838,2960,3096,3216,3350,3470,3582,3797,3914,4038,4168,4290,4428,4562,4678",
                         "endColumns": "74,110,88,100,106,106,98,106,102,126,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "890,1001,1090,1191,1298,1405,1504,1611,1714,1841,1929,2053,2155,2257,2373,2475,2589,2717,2833,2955,3091,3211,3345,3465,3577,3703,3909,4033,4163,4285,4423,4557,4673,4793"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mustafa Beyazyuz\\AndroidStudioProjects\\Android_Repo\\005BasicViewsDataBinding\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "337"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "183"
                     }
                 }
             ]
