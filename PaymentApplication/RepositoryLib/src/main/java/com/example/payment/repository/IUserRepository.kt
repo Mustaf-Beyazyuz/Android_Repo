@@ -5,5 +5,7 @@ import com.karandev.util.data.repository.ICrudRepository
 
 interface IUserRepository : ICrudRepository<User , String>{
 
-    fun existsByUserNameAndPassword(userName: String , password : String) : Boolean
+    fun findByUserNameAndPassword(userName: String , password : String) : User?
+
+    fun existsByUserNameAndPassword(userName: String , password : String) = findByUserNameAndPassword(userName, password) != null
 }

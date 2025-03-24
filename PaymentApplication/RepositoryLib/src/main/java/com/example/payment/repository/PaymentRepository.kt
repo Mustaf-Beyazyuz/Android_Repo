@@ -64,4 +64,8 @@ class PaymentRepository  @Inject constructor() : IPaymentRepository{
     {
         TODO("Not yet implemented")
     }
+
+    override fun findByUserName(userName: String): List<Payment> {
+        TODO("Not yet implemented")
+    }
 }

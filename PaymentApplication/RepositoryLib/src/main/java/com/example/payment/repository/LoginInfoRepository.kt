@@ -64,4 +64,16 @@ class LoginInfoRepository  @Inject constructor(): ILoginInfoRepository {
     {
         TODO("Not yet implemented")
     }
+
+    override fun findByUserName(userName: String): List<LoginInfo> {
+        TODO("Not yet implemented")
+    }
+
+    override fun findSuccsessUserName(userName: String): List<LoginInfo> {
+        TODO("Not yet implemented")
+    }
+
+    override fun findFailsByUserName(userName: String): List<LoginInfo> {
+        TODO("Not yet implemented")
+    }
 }
