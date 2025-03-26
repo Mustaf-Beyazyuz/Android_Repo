@@ -32,7 +32,7 @@ class UserRepository @Inject constructor(@ApplicationContext context: Context ) 
     {
         var user : User? = null
       try {
-          while (true) {
+          while (true){
              user =  ObjectInputStream(fis).readObject() as? User
               if(user?.username == userName && user.password == password)
                   break
