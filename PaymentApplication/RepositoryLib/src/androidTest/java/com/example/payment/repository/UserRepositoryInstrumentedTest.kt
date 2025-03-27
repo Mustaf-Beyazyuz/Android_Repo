@@ -1,0 +1,55 @@
+package com.example.payment.repository
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.payment.repository.entity.User
+import com.example.payment.repository.global.USER_FILE
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+import org.junit.Before
+import java.io.File
+import java.time.LocalDate
+import java.time.Month
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class UserRepositoryInstrumentedTest {
+
+    companion object
+    {
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val userRepository = UserRepository(appContext)
+    }
+
+    @Before
+    fun setUp()
+    {
+        val file = File(appContext.filesDir, USER_FILE)
+        if(file.exists() && file.length()>0L)
+            return
+        val user1 = User("mustafa","mustafa1234","Mustafa","Beyazyüz", LocalDate.of(1998, Month.JUNE,8),LocalDate.now())
+        val user2 = User("talha","talha1234","Talha","Beyazyüz", LocalDate.of(2000, Month.OCTOBER,13),LocalDate.now())
+        userRepository.save(user1)
+        userRepository.save(user2)
+
+    }
+    @Test
+    fun save_and_findByUserNameAndPasswordTrueTest() {
+
+        assertNotNull(userRepository.findByUserNameAndPassword("mustafa","mustafa123"))
+    }
+
+    fun save_and_findByUserNameAndPasswordFalseTest() {
+
+        assertNull(userRepository.findByUserNameAndPassword("ali","ali123"))
+    }
+
+
+}
