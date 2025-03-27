@@ -10,6 +10,7 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Ignore
 import java.io.File
 import java.time.LocalDate
 import java.time.Month
@@ -20,6 +21,7 @@ import java.time.Month
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
+//@Ignore("bu testi geçmek için kullanılır")
 class UserRepositoryInstrumentedTest {
 
     companion object
@@ -41,14 +43,26 @@ class UserRepositoryInstrumentedTest {
 
     }
     @Test
-    fun save_and_findByUserNameAndPasswordTrueTest() {
+    fun save_and_findByUserNameAndPasswordSuccsessTest() {
 
-        assertNotNull(userRepository.findByUserNameAndPassword("mustafa","mustafa123"))
+        assertNotNull(userRepository.findByUserNameAndPassword("mustafa","mustafa1234"))
     }
 
-    fun save_and_findByUserNameAndPasswordFalseTest() {
+    @Test
+    fun save_and_findByUserNameAndPasswordPasswordFailTest() {
 
-        assertNull(userRepository.findByUserNameAndPassword("ali","ali123"))
+        assertNull(userRepository.findByUserNameAndPassword("talha","ali123"))
+    }
+    @Test
+    fun save_and_findByUserNameAndPasswordUserNameFailTest() {
+
+        assertNull(userRepository.findByUserNameAndPassword("mahmut","talha1234"))
+    }
+
+    @Test
+    fun save_and_findByUserNameAndPasswordBothFailTest() {
+
+        assertNull(userRepository.findByUserNameAndPassword("mahmut","mahmut"))
     }
 
 

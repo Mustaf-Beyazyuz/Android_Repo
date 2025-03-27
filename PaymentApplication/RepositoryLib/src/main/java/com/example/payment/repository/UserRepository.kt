@@ -41,7 +41,7 @@ class UserRepository @Inject constructor(@ApplicationContext context: Context ) 
       catch (ignore : EOFException)
 
       {
-
+       user = null
       }
         return user
     }
