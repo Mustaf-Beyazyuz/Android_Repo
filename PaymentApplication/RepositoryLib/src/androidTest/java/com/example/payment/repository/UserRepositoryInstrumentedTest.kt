@@ -65,5 +65,31 @@ class UserRepositoryInstrumentedTest {
         assertNull(userRepository.findByUserNameAndPassword("mahmut","mahmut"))
     }
 
+    @Test
+    fun existsByUserNameAndPasswordSuccessTest() {
+
+        assertTrue(userRepository.existsByUserNameAndPassword("mustafa","mustafa1234"))
+    }
+    @Test
+    fun existsByUserNameAndPasswordPasswordFailTest() {
+
+        assertFalse(userRepository.existsByUserNameAndPassword("mustafa","mustafa12"))
+    }
+
+    @Test
+    fun existsByUserNameAndPasswordUserNameTest() {
+
+        assert(userRepository.existsByUserNameAndPassword("mahmut","mustafa1234"))
+    }
+
+
+    @Test
+    fun existsByUserNameAndPasswordBothFailTest() {
+
+        assertFalse(userRepository.existsByUserNameAndPassword("ayse","ayse34"))
+    }
+
+
+
 
 }
