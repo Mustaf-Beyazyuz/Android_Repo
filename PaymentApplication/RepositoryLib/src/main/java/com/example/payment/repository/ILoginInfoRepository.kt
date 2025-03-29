@@ -11,4 +11,8 @@ interface ILoginInfoRepository : ICrudRepository <LoginInfo, Long> {
 
     fun findFailsByUserName(userName: String) : List<LoginInfo>
 
+    fun findLastSuccessByUserName(userName: String) : List<LoginInfo>
+
+    fun findLastFailByUserName(userName: String) : List<LoginInfo>
+
 }

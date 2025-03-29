@@ -6,6 +6,7 @@ import com.example.payment.repository.IUserRepository
 import com.example.payment.repository.LoginInfoRepository
 import com.example.payment.repository.PaymentRepository
 import com.example.payment.repository.UserRepository
+import com.example.payment.repository.entity.LoginInfo
 import com.example.payment.repository.entity.User
 import com.example.payment.repository.global.USER_FILE
 import com.karandev.util.data.repository.exception.RepositoryException
@@ -19,16 +20,7 @@ class PaymentApplicationHelper {
     @Inject
     lateinit var paymentRepository: IPaymentRepository
 
-    fun saveUser(user : User) : User
-    {
-        try {
-            return userRepository.save(user)
-        }
-        catch (ex :Throwable)
-        {
-            throw RepositoryException("PaymentApplicationHelper.saveUser")
-        }
-    }
+
     fun existsUserByUserName(userName: String?): Boolean
     {
         try {
@@ -36,19 +28,62 @@ class PaymentApplicationHelper {
         }
         catch (ex :Throwable)
         {
-            throw RepositoryException("PaymentApplicationHelper.existsUserByUserName")
+            throw RepositoryException("PaymentApplicationHelper.existsUserByUserName",ex)
         }
     }
 
-    fun finUserBydUserNameAndPassword(userName: String, password: String): User?
+    fun saveUser(user : User) : User
     {
-
-       try {
-           return userRepository.findByUserNameAndPassword(userName,password)
-       }
-       catch (ex :Throwable)
-       {
-           throw RepositoryException("PaymentApplicationHelper.findUserByUserNameAndPassword")
-       }
+        try {
+            return userRepository.save(user)
+        }
+        catch (ex :Throwable)
+        {
+            throw RepositoryException("PaymentApplicationHelper.saveUser",ex)
+        }
     }
+
+    fun findLoginInfoByUserName(userName: String): List<LoginInfo>
+    {
+        try {
+            return  loginInfoRepository.findByUserName(userName)
+        }
+        catch (ex :Throwable)
+        {
+            throw RepositoryException("PaymentApplicationHelper.findUserByUserNameAndPassword",ex)
+        }
+    }
+    fun findSuccessLoginInfoByUserName(userName: String): List<LoginInfo>
+    {
+        try {
+            return  loginInfoRepository.findSuccsessUserName(userName)
+        }
+        catch (ex :Throwable)
+        {
+            throw RepositoryException("PaymentApplicationHelper.findSuccessLoginInfoByUserName",ex)
+        }
+    }
+
+    fun findFailLoginInfoByUserName(userName: String): List<LoginInfo>
+    {
+        try {
+            return  loginInfoRepository.findFailsByUserName(userName)
+        }
+        catch (ex :Throwable)
+        {
+            throw RepositoryException("PaymentApplicationHelper.findFailLoginInfoByUserName",ex)
+        }
+    }
+
+    fun saveLoginInfo(loginInfo: LoginInfo) : LoginInfo
+    {
+        try {
+            return loginInfoRepository.save(loginInfo)
+        }
+        catch (ex :Throwable)
+        {
+            throw RepositoryException("PaymentApplicationHelper.saveLoginInfo",ex)
+        }
+    }
+
 }

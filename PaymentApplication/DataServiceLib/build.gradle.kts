@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.payment.repository"
+    namespace = "com.example.data.service"
     compileSdk = 35
 
     defaultConfig {
@@ -26,9 +26,9 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+
+    implementation(project(path = ":RepositoryLib"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,7 +50,6 @@ dependencies {
     implementation("com.karandev:com-karandev-util-data:20.0.0")
 
 }
-
 kapt {
     correctErrorTypes = true
 }

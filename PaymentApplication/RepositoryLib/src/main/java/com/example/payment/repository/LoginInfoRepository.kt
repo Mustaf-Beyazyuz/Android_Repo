@@ -1,10 +1,33 @@
 package com.example.payment.repository
 
+import android.content.Context
 import com.example.payment.repository.entity.LoginInfo
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Optional
 import javax.inject.Inject
 
-class LoginInfoRepository  @Inject constructor(): ILoginInfoRepository {
+class LoginInfoRepository  @Inject constructor(@ApplicationContext var context: Context): ILoginInfoRepository {
+
+
+
+    override fun findSuccsessUserName(userName: String): List<LoginInfo>
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun findFailsByUserName(userName: String): List<LoginInfo>
+    {
+        TODO("Not yet implemented")
+    }
+
+    override fun <S : LoginInfo?> save(entity: S): S
+    {
+        TODO("Not yet implemented")
+
+    }
+
+    ///////////////////////////
+
     override fun count(): Long
     {
         TODO("Not yet implemented")
@@ -20,7 +43,14 @@ class LoginInfoRepository  @Inject constructor(): ILoginInfoRepository {
         TODO("Not yet implemented")
     }
 
-    override fun deleteAll(entities: MutableIterable<LoginInfo>?)
+    override fun findLastSuccessByUserName(userName: String): List<LoginInfo> {
+        TODO("Not yet implemented")
+    }
+
+    override fun findLastFailByUserName(userName: String): List<LoginInfo> {
+        TODO("Not yet implemented")
+    }
+        override fun deleteAll(entities: MutableIterable<LoginInfo>?)
     {
         TODO("Not yet implemented")
     }
@@ -30,10 +60,6 @@ class LoginInfoRepository  @Inject constructor(): ILoginInfoRepository {
         TODO("Not yet implemented")
     }
 
-    override fun <S : LoginInfo?> save(entity: S): S
-    {
-        TODO("Not yet implemented")
-    }
 
     override fun <S : LoginInfo?> saveAll(entities: MutableIterable<S>?): MutableIterable<S>
     {
@@ -65,15 +91,11 @@ class LoginInfoRepository  @Inject constructor(): ILoginInfoRepository {
         TODO("Not yet implemented")
     }
 
-    override fun findByUserName(userName: String): List<LoginInfo> {
+    override fun findByUserName(userName: String): List<LoginInfo>
+    {
         TODO("Not yet implemented")
     }
 
-    override fun findSuccsessUserName(userName: String): List<LoginInfo> {
-        TODO("Not yet implemented")
-    }
 
-    override fun findFailsByUserName(userName: String): List<LoginInfo> {
-        TODO("Not yet implemented")
-    }
+
 }

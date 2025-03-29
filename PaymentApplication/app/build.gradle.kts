@@ -42,6 +42,8 @@ android {
 
 dependencies {
 
+    implementation(project(path = ":RepositoryLib"))
+    implementation(project(path = ":DataServiceLib"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
