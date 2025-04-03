@@ -12,7 +12,8 @@ class UserMapper @Inject constructor() : IUserMapper {
            ,userSaveDTO.middleName,userSaveDTO.lastName,userSaveDTO.birthDate, LocalDate.now())
     }
 
-    override fun toUserSaveDTO(user: User): UserSaveDTO {
+    override fun toUserSaveDTO(user: User): UserSaveDTO
+    {
         return UserSaveDTO(user.username,user.password,user.firstname
             ,user.lastName,user.birthDate, user.middleName)
     }

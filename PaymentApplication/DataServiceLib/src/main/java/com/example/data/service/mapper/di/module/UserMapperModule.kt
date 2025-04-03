@@ -1,4 +1,4 @@
-package com.example.data.service.module
+package com.example.data.service.mapper.di.module
 
 import com.example.data.service.mapper.IUserMapper
 import com.example.data.service.mapper.UserMapper

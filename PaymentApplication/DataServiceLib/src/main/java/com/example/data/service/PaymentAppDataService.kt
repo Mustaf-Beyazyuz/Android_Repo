@@ -1,6 +1,5 @@
 package com.example.data.service
 
-import android.view.inspector.PropertyMapper
 import com.example.data.service.dto.UserSaveDTO
 import com.example.data.service.mapper.IUserMapper
 import com.example.payment.repository.dal.PaymentApplicationHelper
@@ -10,11 +9,12 @@ import javax.inject.Inject
 
 class PaymentAppDataService @Inject constructor(
     paymentApplicationHelper: PaymentApplicationHelper,
-    userMapper: IUserMapper){
+    userMapper: IUserMapper
+){
 
     private val mPaymentApplicationHelper = paymentApplicationHelper
     private val mUserMapper = userMapper
-    fun saveUser(userSaveDTO: UserSaveDTO ): Boolean
+    fun saveUser(userSaveDTO: UserSaveDTO): Boolean
     {
         var result = false
         try
@@ -24,11 +24,11 @@ class PaymentAppDataService @Inject constructor(
         }
         catch (ex: RepositoryException)
         {
-            throw DataServiceException("PaymentApplicationDataService.saveUser",ex.cause)
+            throw DataServiceException("PaymentApplicationDataService.saveUser", ex.cause)
         }
         catch (ex: Throwable)
         {
-            throw DataServiceException("PaymentApplicationDataService.saveUser",ex)
+            throw DataServiceException("PaymentApplicationDataService.saveUser", ex)
         }
           return result
     }
